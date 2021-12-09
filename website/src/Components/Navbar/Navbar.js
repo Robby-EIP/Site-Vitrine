@@ -11,9 +11,7 @@ export class Navbar extends Component {
       color: "white",
       display: "flex",
       textAlign: "center",
-      alignContent: "center",
-      backdropFilter: "blur(5px)",
-      webkitBackdropFilter: "blur(5px)"
+      alignContent: "center"
     };
     this.pageName = {
       width: "100%",
