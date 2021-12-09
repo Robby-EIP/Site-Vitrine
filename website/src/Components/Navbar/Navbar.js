@@ -11,7 +11,8 @@ export class Navbar extends Component {
             height: "50px",
             width: "100%",
             position: "fixed",
-            backgroundColor: "black"
+            backgroundColor: "black",
+            zIndex: "1"
         }}></div>
     );
   }
