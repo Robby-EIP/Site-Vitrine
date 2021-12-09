@@ -6,12 +6,12 @@ export class Navbar extends Component {
     super(props);
     this.pageItem = {
       width: "5%",
+      minWidth: "65px",
       alignItems: "center",
       color: "white",
       display: "flex",
       textAlign: "center",
-      alignContent: "center",
-      marginRight: "1%",
+      alignContent: "center"
     };
     this.pageName = {
       width: "100%",
@@ -25,7 +25,7 @@ export class Navbar extends Component {
   };
 
   scrollToBot = () => {
-    $("html").animate({ scrollTop: 1000 }, 500);
+    $("html").animate({ scrollTop: 10000 }, 500);
   };
 
   render() {
@@ -47,7 +47,7 @@ export class Navbar extends Component {
         <div
           onClick={this.scrollToTop}
           style={{
-            paddingLeft: "3%",
+            paddingLeft: "2%",
             height: "100%",
             width: "100px",
             textAlign: "center",
