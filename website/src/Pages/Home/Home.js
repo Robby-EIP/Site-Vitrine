@@ -35,8 +35,12 @@ function Home() {
         </div>
         <div style={{ color: 'white', width: '100%', height: '10%' }}>
           <a href="https://github.com/Robby-EIP" target={"_blank"} style={{ marginRight: '30%' }}><img alt="our github" src="icons8-github.svg" style={{ width: '7%', minWidth: '75px' }} /></a>
-          <a href="https://discord.gg/ujrvfPqeBR" target={"_blank"}><img alt="our discord" src="icons8-discord-bubble.svg" style={{ width: '7%', minWidth: '75px' }} /></a>
+          <a href="https://discord.gg/Y5mjy86rFS" target={"_blank"}><img alt="our discord" src="icons8-discord-bubble.svg" style={{ width: '7%', minWidth: '75px' }} /></a>
         </div>
+      </div>
+      <div style={{ height: '0.1%', width: '100%' }}></div>
+      <div style={{ backgroundColor: '#1B152D', height: '100%', width: '100%' }}>
+        {/* <div style={{ backgroundColor: 'red', width: '100%', paddingTop: '7%', display: 'flex', flexDirection: 'column' }}></div> */}
       </div>
       <div style={{ height: '0.1%', width: '100%' }}></div>
     </>
