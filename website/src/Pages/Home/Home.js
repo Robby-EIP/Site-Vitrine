@@ -39,8 +39,34 @@ function Home() {
         </div>
       </div>
       <div style={{ height: '0.1%', width: '100%' }}></div>
+      <div style={{ backgroundColor: '#1B152D', height: '100%', width: '100%', paddingBottom: '7%' }}>
+        <div style={{ backgroundColor: 'red', paddingTop: '7%', width: '100%', display: 'flex', flexDirection: 'column' }}>
+          <span >page exercices ludiques ect</span>
+        </div>
+      </div>
+      <div style={{ height: '0.1%', width: '100%' }}></div>
       <div style={{ backgroundColor: '#1B152D', height: '100%', width: '100%' }}>
-        {/* <div style={{ backgroundColor: 'red', width: '100%', paddingTop: '7%', display: 'flex', flexDirection: 'column' }}></div> */}
+        <div style={{ backgroundColor: 'red', paddingTop: '7%', width: '100%', display: 'flex', flexDirection: 'column' }}>
+          <span >page timeline</span>
+        </div>
+      </div>
+      <div style={{ height: '0.1%', width: '100%' }}></div>
+      <div style={{ backgroundColor: '#1B152D', height: '100%', width: '100%' }}>
+        <div style={{ backgroundColor: 'red', paddingTop: '7%', width: '100%', display: 'flex', flexDirection: 'column' }}>
+          <span >page carrousel</span>
+        </div>
+      </div>
+      <div style={{ height: '0.1%', width: '100%' }}></div>
+      <div style={{ backgroundColor: '#1B152D', height: '100%', width: '100%' }}>
+        <div style={{ backgroundColor: 'red', paddingTop: '7%', width: '100%', display: 'flex', flexDirection: 'column' }}>
+          <span >page team</span>
+        </div>
+      </div>
+      <div style={{ height: '0.1%', width: '100%' }}></div>
+      <div style={{ backgroundColor: '#1B152D', height: '100%', width: '100%' }}>
+        <div style={{ backgroundColor: 'red', paddingTop: '7%', width: '100%', display: 'flex', flexDirection: 'column' }}>
+          <span >page contact</span>
+        </div>
       </div>
       <div style={{ height: '0.1%', width: '100%' }}></div>
     </>
