@@ -14,15 +14,14 @@ function Home() {
         <h1>Home</h1>
         <p>You clicked {count} times</p>
         <button onClick={() => setCount(count + 1)}>Click me</button>
-        <div style={{ width: '90%', paddingLeft: '5%', paddingTop: '4%', display: 'flex' }}>
+        <div style={{ width: '90%', paddingLeft: '5%', paddingTop: '6%', display: 'flex' }}>
           <div>
             <div style={{ width: '35%' }}>
-              <p style={{ color: '#7AFFBF', fontSize: 68 }}>Easily discover robotics programming</p>
+              <span style={{ color: '#7AFFBF', fontSize: 68 }}>Easily discover robotics programming</span>
             </div>
-            <div style={{ width: '35%' }}>
-              <p style={{ color: '#8D8282', fontSize: 32 }}>Robby is the solution</p>
+            <div style={{ width: '35%', paddingTop: '1.5%' }}>
+              <span style={{ color: '#8D8282', fontSize: 32 }}>Robby is the solution</span>
             </div>
-
           </div>
           <img src="undraw_firmware_re_fgdy.svg" style={{ width: '30%' }}></img>
         </div>
