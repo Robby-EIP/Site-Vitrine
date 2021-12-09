@@ -8,7 +8,7 @@ export class Navbar extends Component {
   render() {
     return (
         <div style={{
-            height: "50px",
+            height: "60px",
             width: "100%",
             position: "fixed",
             backgroundColor: "black",

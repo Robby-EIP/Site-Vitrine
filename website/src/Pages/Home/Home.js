@@ -2,17 +2,20 @@ function Home() {
 
   return (
     <>
-      <div style={{ backgroundColor: '#322653', height: '50%', width: '100%' }}>
-        <div style={{ width: '90%', paddingLeft: '5%', paddingTop: '6%', display: 'flex' }}>
-          <div>
-            <div style={{ width: '35%' }}>
+      <div style={{ backgroundColor: '#322653', height: '55%', width: '100%' }}>
+        <div style={{ width: '85%', paddingLeft: '15%', paddingTop: '14%', display: 'flex' }}>
+          <div style={{ width: '20%' }}>
+            <div style={{ width: '130%' }}>
               <span style={{ color: '#7AFFBF', fontSize: 68 }}>Easily discover robotics programming</span>
             </div>
-            <div style={{ width: '35%', paddingTop: '1.5%' }}>
+            <div style={{ width: '125%', paddingTop: '1.5%' }}>
               <span style={{ color: '#8D8282', fontSize: 32 }}>Robby is the solution</span>
             </div>
           </div>
-          <img src="undraw_firmware_re_fgdy.svg" style={{ width: '30%' }}></img>
+          <div style={{ width: '50%', position: 'relative' }}>
+            <img src="Vector1.svg" style={{ width: '65%', position: 'absolute' }} />
+            <img src="undraw_firmware_re_fgdy.svg" style={{ width: '40%', position: 'absolute' }} />
+          </div>
         </div>
       </div>
       <div style={{ backgroundColor: '#1B152D', height: '44.9%', width: '100%' }}></div>
