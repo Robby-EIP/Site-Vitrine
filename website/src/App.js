@@ -16,7 +16,7 @@ function App() {
         </div>
       </nav> */}
 
-      <div className="main-container">
+      <div id="main-container">
         <Routes>
           <Route exact path='/' element={<Home />} />
         </Routes>
