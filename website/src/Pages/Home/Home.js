@@ -7,6 +7,8 @@ import StepConnector, { stepConnectorClasses } from '@mui/material/StepConnector
 import { useState, useEffect } from 'react';
 import Slider from "react-slick";
 import { CenterFocusStrong } from '@mui/icons-material';
+import { Form, Button } from 'react-bootstrap';
+
 
 const steps = [
   'Creation of Robby',
@@ -52,7 +54,11 @@ const QontoConnector = styled(StepConnector)(({ theme }) => ({
 
 
 function Home() {
-  const [images, setImages] = useState([]);  
+  const [images, setImages] = useState([]);
+  const [email, setEmail] = useState('');
+  const [object, setObject] = useState('');
+  const [message, setMessage] = useState('');
+  const [error, setError] = useState(null);
 
   useEffect(() => {
     const images = require.context('./carousel', true, /\.(png|jpe?g|svg)$/);
@@ -62,6 +68,15 @@ function Home() {
     });
     setImages(imagesArray);
   }, []);
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log(email, object, message);
+  };
+
+  function validateForm() {
+    return email.length > 0 && object.length > 0 && message.length > 0;
+  }
 
   return (
     <>
@@ -114,7 +129,7 @@ function Home() {
           </div>
           <div style={{ height: '30%', width: '30%', display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center' }}>
             <span style={{ color: 'white', fontSize: 32 }}>Turnkey Solution</span>
-            <img src="image 6.svg" alt='solution'  style={{ width: '25%', minWidth: '75px', paddingTop: '7%' }} />
+            <img src="image 6.svg" alt='solution' style={{ width: '25%', minWidth: '75px', paddingTop: '7%' }} />
           </div>
         </div>
         <div style={{ paddingTop: '7%', width: '100%', display: 'flex', flexDirection: 'row', justifyContent: 'center' }}>
@@ -133,19 +148,19 @@ function Home() {
       <div style={{ height: '0.1%', width: '100%' }}></div>
       <div style={{ backgroundColor: '#1B152D', height: '100%', width: '100%' }}>
         <div style={{ backgroundColor: '#1B152D', paddingTop: '7%', width: '100%', display: 'flex', flexDirection: 'column' }}>
-        <span style={{ color: 'white', fontSize: 72 }} >Timeline</span>
-        <div style={{display: 'flex', paddingTop: "15%"}}>
-          <Box sx={{ width: "100%",}}>
-            <Stepper activeStep={2} alternativeLabel connector={<QontoConnector />}>
-              {steps.map((label) => (
-                <Step key={label}>
-                  <StepLabel style={{fontSize: '50px'}}>
-                    <span style={{color: "white"}}>{label}</span>
-                  </StepLabel>
-                </Step>
-              ))}
-            </Stepper>
-          </Box>
+          <span style={{ color: 'white', fontSize: 72 }} >Timeline</span>
+          <div style={{ display: 'flex', paddingTop: "15%" }}>
+            <Box sx={{ width: "100%", }}>
+              <Stepper activeStep={2} alternativeLabel connector={<QontoConnector />}>
+                {steps.map((label) => (
+                  <Step key={label}>
+                    <StepLabel style={{ fontSize: '50px' }}>
+                      <span style={{ color: "white" }}>{label}</span>
+                    </StepLabel>
+                  </Step>
+                ))}
+              </Stepper>
+            </Box>
           </div>
         </div>
       </div>
@@ -153,63 +168,116 @@ function Home() {
       <div style={{ backgroundColor: '#1B152D', height: '100%', width: '100%', justifyContent: 'center' }}>
         <div style={{ paddingTop: '4%', width: '100%', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
           <span style={{ color: 'white', fontSize: 72 }} >Caroussel</span>
-          <div style={{width: "100%", height: "100%", display: 'flex', justifyContent: "center", paddingTop: "2%"}}>
-            <div style={{ height: "30%", width: "30%", justifyContent: "center"}}>
+          <div style={{ width: "100%", height: "100%", display: 'flex', justifyContent: "center", paddingTop: "2%" }}>
+            <div style={{ height: "30%", width: "30%", justifyContent: "center" }}>
               <Slider {...settings}>
                 {images.map((image, index) => {
-                  return ( <img alt="" src={image} key={index}/> );
-                    })
-                  }
+                  return (<img alt="" src={image} key={index} />);
+                })
+                }
               </Slider>
             </div>
-          </div>   
+          </div>
         </div>
       </div>
       <div style={{ height: '0.1%', width: '100%' }}></div>
       <div style={{ backgroundColor: '#1B152D', height: '100%', width: '100%' }}>
         <div style={{ backgroundColor: '#1B152D', paddingTop: '7%', width: '100%', display: 'flex', flexDirection: 'column', alignItems: "center" }}>
-        <span style={{ color: 'white', fontSize: 72 }} >Our team</span>
-        <div style={{display: 'flex', paddingTop: "15%", justifyContent: "space-around", width: "75%"}}>
-          <div style={{display: 'flex', flexDirection: "column", alignItems: 'center'}}>
-            <img height="110px" width="100px" src="team/gab.jpeg" alt="Gabriel Knies"></img>
-            <span style={{color: 'white', paddingTop: "10%"}}>Gabriel</span>
-            <span style={{color: 'white', paddingTop: "10%"}}>Knies</span>
+          <span style={{ color: 'white', fontSize: 72 }} >Our team</span>
+          <div style={{ display: 'flex', paddingTop: "15%", justifyContent: "space-around", width: "75%" }}>
+            <div style={{ display: 'flex', flexDirection: "column", alignItems: 'center' }}>
+              <img height="110px" width="100px" src="team/gab.jpeg" alt="Gabriel Knies"></img>
+              <span style={{ color: 'white', paddingTop: "10%" }}>Gabriel</span>
+              <span style={{ color: 'white', paddingTop: "10%" }}>Knies</span>
+            </div>
+            <div style={{ display: 'flex', flexDirection: "column", alignItems: 'center' }}>
+              <img height="110px" width="100px" src="team/lolo.jpeg" alt="Lorenzo Manoeuvre"></img>
+              <span style={{ color: 'white', paddingTop: "10%" }}>Lorenzo</span>
+              <span style={{ color: 'white', paddingTop: "10%" }}>Manoeuvre</span>
+            </div>
+            <div style={{ display: 'flex', flexDirection: "column", alignItems: 'center' }}>
+              <img height="110px" width="100px" src="team/lucas.jpeg" alt="Lucas Dudot"></img>
+              <span style={{ color: 'white', paddingTop: "10%" }}>Lucas</span>
+              <span style={{ color: 'white', paddingTop: "10%" }}>Dudot</span>
+            </div>
+            <div style={{ display: 'flex', flexDirection: "column", alignItems: 'center' }}>
+              <img height="110px" width="100px" src="team/rafik.jpeg" alt="Rafik Merzouk"></img>
+              <span style={{ color: 'white', paddingTop: "10%" }}>Rafik</span>
+              <span style={{ color: 'white', paddingTop: "10%" }}>Merzouk</span>
+            </div>
+            <div style={{ display: 'flex', flexDirection: "column", alignItems: 'center' }}>
+              <img height="110px" width="100px" src="team/jor.jpeg" alt="Jori Bashllari"></img>
+              <span style={{ color: 'white', paddingTop: "10%" }}>Jori</span>
+              <span style={{ color: 'white', paddingTop: "10%" }}>Bashllari</span>
+            </div>
+            <div style={{ display: 'flex', flexDirection: "column", alignItems: 'center' }}>
+              <img height="110px" width="100px" src="team/gab.jpeg" alt="Paul Marliere"></img>
+              <span style={{ color: 'white', paddingTop: "10%" }}>Paul</span>
+              <span style={{ color: 'white', paddingTop: "10%" }}>Marliere</span>
+            </div>
           </div>
-          <div style={{display: 'flex', flexDirection: "column", alignItems: 'center'}}>
-            <img height="110px" width="100px" src="team/lolo.jpeg" alt="Lorenzo Manoeuvre"></img>
-            <span style={{color: 'white', paddingTop: "10%"}}>Lorenzo</span>
-            <span style={{color: 'white', paddingTop: "10%"}}>Manoeuvre</span>
-          </div>
-          <div style={{display: 'flex', flexDirection: "column", alignItems: 'center'}}>
-            <img height="110px" width="100px" src="team/lucas.jpeg" alt="Lucas Dudot"></img>
-            <span style={{color: 'white', paddingTop: "10%"}}>Lucas</span>
-            <span style={{color: 'white', paddingTop: "10%"}}>Dudot</span>
-          </div>
-          <div style={{display: 'flex', flexDirection: "column", alignItems: 'center'}}>
-            <img height="110px" width="100px" src="team/rafik.jpeg" alt="Rafik Merzouk"></img>
-            <span style={{color: 'white', paddingTop: "10%"}}>Rafik</span>
-            <span style={{color: 'white', paddingTop: "10%"}}>Merzouk</span>
-          </div>
-          <div style={{display: 'flex', flexDirection: "column", alignItems: 'center'}}>
-            <img height="110px" width="100px" src="team/jor.jpeg" alt="Jori Bashllari"></img>
-            <span style={{color: 'white', paddingTop: "10%"}}>Jori</span>
-            <span style={{color: 'white', paddingTop: "10%"}}>Bashllari</span>
-          </div>
-          <div style={{display: 'flex', flexDirection: "column", alignItems: 'center'}}>
-            <img height="110px" width="100px" src="team/gab.jpeg" alt="Paul Marliere"></img>
-            <span style={{color: 'white', paddingTop: "10%"}}>Paul</span>
-            <span style={{color: 'white', paddingTop: "10%"}}>Marliere</span>
-          </div>
-        </div>
-        </div>
-      </div>
-      <div style={{ height: '0.1%', width: '100%' }}></div>
-      <div style={{ backgroundColor: '#1B152D', height: '100%', width: '100%' }}>
-        <div style={{ backgroundColor: 'red', paddingTop: '7%', width: '100%', display: 'flex', flexDirection: 'column' }}>
-          <span >page contact</span>
         </div>
       </div>
       <div style={{ height: '0.1%', width: '100%' }}></div>
+      <div style={{ backgroundColor: '#1B152D', height: '100%', width: '100%', justifyContent: 'center' }}>
+        <div style={{ paddingTop: '7%', width: '100%', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
+          <div style={{ marginTop: '5%', backgroundColor: 'orange', paddingTop: '5%', width: '60%', justifyContent: 'center', alignSelf: 'center',  }}>
+            <span style={{ color: "black", fontSize: '42px' }}>Contact us</span>
+            <div style={{ paddingLeft: '5%', paddingRight: '5%', width: '100%', justifyContent: 'center', display: 'flex' }}>
+              <Form style={{ width: '50%', paddingBottom: '5%' }} onSubmit={handleSubmit}>
+                <Form.Group size="lg" controlId="email">
+                  <Form.Label
+                    style={{ color: 'white', marginRight: "1%" }}
+                  >Email</Form.Label>
+                  <Form.Control
+                    placeholder="Enter email"
+                    autoFocus
+                    type="email"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                  />
+                </Form.Group>
+                <Form.Group size="lg" controlId="object">
+                  <Form.Label
+                    style={{ color: 'white', marginRight: "1%" }}
+                  >Object</Form.Label>
+                  <Form.Control
+                    placeholder="Enter Object"
+                    type="text"
+                    value={object}
+                    onChange={(e) => setObject(e.target.value)}
+                  />
+                </Form.Group>
+                <Form.Group size="lg" controlId="message">
+                  <Form.Label
+                    style={{ color: 'white', marginRight: "1%" }}
+                  >Message</Form.Label>
+                  <Form.Control
+                    placeholder="Enter message"
+                    type="text"
+                    value={message}
+                    onChange={(e) => setMessage(e.target.value)}
+                  />
+                </Form.Group>
+                <Button
+                  style={{ marginTop: '5%' }}
+                  className="buttonSubmit"
+                  block
+                  size="lg"
+                  type="submit"
+                  disabled={!validateForm()}
+                >
+                  Submit
+                </Button>
+                {error && <div className="alert alert-danger mt-3 mb-0">{error}</div>}
+              </Form>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div style={{ backgroundColor: '#252B42', height: '30%' }}>
+        <span>e</span>
+      </div>
     </>
   );
 }
