@@ -1,3 +1,45 @@
+import Box from '@mui/material/Box';
+import Stepper from '@mui/material/Stepper';
+import Step from '@mui/material/Step';
+import StepLabel from '@mui/material/StepLabel';
+import { styled } from '@mui/material/styles';
+import StepConnector, { stepConnectorClasses } from '@mui/material/StepConnector';
+
+const steps = [
+  'Creation of Robby',
+  'First version',
+  '',
+  '',
+  '',
+  '',
+  '',
+  '',
+];
+
+const QontoConnector = styled(StepConnector)(({ theme }) => ({
+  [`&.${stepConnectorClasses.alternativeLabel}`]: {
+    top: 10,
+    left: 'calc(-50% + 16px)',
+    right: 'calc(50% + 16px)',
+  },
+  [`&.${stepConnectorClasses.active}`]: {
+    [`& .${stepConnectorClasses.line}`]: {
+      borderColor: '#784af4',
+    },
+  },
+  [`&.${stepConnectorClasses.completed}`]: {
+    [`& .${stepConnectorClasses.line}`]: {
+      borderColor: '#784af4',
+    },
+  },
+  [`& .${stepConnectorClasses.line}`]: {
+    borderColor: theme.palette.mode === 'dark' ? theme.palette.grey[800] : '#eaeaf0',
+    borderTopWidth: 3,
+    borderRadius: 1,
+  },
+}));
+
+
 function Home() {
 
   return (
@@ -69,8 +111,21 @@ function Home() {
       </div>
       <div style={{ height: '0.1%', width: '100%' }}></div>
       <div style={{ backgroundColor: '#1B152D', height: '100%', width: '100%' }}>
-        <div style={{ backgroundColor: 'red', paddingTop: '7%', width: '100%', display: 'flex', flexDirection: 'column' }}>
-          <span >page timeline</span>
+        <div style={{ backgroundColor: '#1B152D', paddingTop: '7%', width: '100%', display: 'flex', flexDirection: 'column' }}>
+        <span style={{ color: 'white', fontSize: 72 }} >Timeline</span>
+        <div style={{display: 'flex', paddingTop: "15%"}}>
+          <Box sx={{ width: "100%",}}>
+            <Stepper activeStep={2} alternativeLabel connector={<QontoConnector />}>
+              {steps.map((label) => (
+                <Step key={label}>
+                  <StepLabel style={{fontSize: '50px'}}>
+                    <span style={{color: "white"}}>{label}</span>
+                  </StepLabel>
+                </Step>
+              ))}
+            </Stepper>
+          </Box>
+          </div>
         </div>
       </div>
       <div style={{ height: '0.1%', width: '100%' }}></div>
