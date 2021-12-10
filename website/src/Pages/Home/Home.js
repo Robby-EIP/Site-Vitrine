@@ -6,6 +6,7 @@ import { styled } from '@mui/material/styles';
 import StepConnector, { stepConnectorClasses } from '@mui/material/StepConnector';
 import { useState, useEffect } from 'react';
 import Slider from "react-slick";
+import { CenterFocusStrong } from '@mui/icons-material';
 
 const steps = [
   'Creation of Robby',
@@ -17,6 +18,14 @@ const steps = [
   '',
   '',
 ];
+
+const settings = {
+  dots: true,
+  infinite: true,
+  speed: 500,
+  slidesToShow: 1,
+  slidesToScroll: 1
+};
 
 const QontoConnector = styled(StepConnector)(({ theme }) => ({
   [`&.${stepConnectorClasses.alternativeLabel}`]: {
@@ -142,10 +151,18 @@ function Home() {
       </div>
       <div style={{ height: '0.1%', width: '100%' }}></div>
       <div style={{ backgroundColor: '#1B152D', height: '100%', width: '100%', justifyContent: 'center' }}>
-        <div style={{ paddingTop: '12%', width: '100%', display: 'flex', flexDirection: 'row', justifyContent: 'center' }}>
-          {images.map((image, index) => (
-            <img src={image} alt="carousel" style={{ width: '20%' }} />
-          ))}
+        <div style={{ paddingTop: '4%', width: '100%', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
+          <span style={{ color: 'white', fontSize: 72 }} >Caroussel</span>
+          <div style={{width: "100%", height: "100%", display: 'flex', justifyContent: "center", paddingTop: "2%"}}>
+            <div style={{ height: "30%", width: "30%", justifyContent: "center"}}>
+              <Slider {...settings}>
+                {images.map((image, index) => {
+                  return ( <img alt="" src={image} key={index}/> );
+                    })
+                  }
+              </Slider>
+            </div>
+          </div>   
         </div>
       </div>
       <div style={{ height: '0.1%', width: '100%' }}></div>
