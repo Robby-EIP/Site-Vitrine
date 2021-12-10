@@ -4,6 +4,7 @@ import Step from '@mui/material/Step';
 import StepLabel from '@mui/material/StepLabel';
 import { styled } from '@mui/material/styles';
 import StepConnector, { stepConnectorClasses } from '@mui/material/StepConnector';
+import { useState, useEffect } from 'react';
 
 const steps = [
   'Creation of Robby',
@@ -41,24 +42,16 @@ const QontoConnector = styled(StepConnector)(({ theme }) => ({
 
 
 function Home() {
-  // const [images, setImages] = useState([]);  
+  const [images, setImages] = useState([]);  
 
-
-  // import all images from public/carousel
-  // useEffect(() => {
-  //   const images = require.context('./carousel/', true);
-  //   console.log("test ", images);
-  //   console.log("test.keys() ", images.keys());
-  //   setImages(images.keys());
-  // }, []);
-
-  // const importAll = (r) => {
-  //   return r.keys().map(r);
-  // };
-
-  // useEffect(() => {
-  //   setImages(importAll(require.context('carousel/', false, /\.(png|jpe?g|svg)$/)));
-  // }, []);
+  useEffect(() => {
+    const images = require.context('./carousel', true, /\.(png|jpe?g|svg)$/);
+    let imagesArray = images.keys();
+    imagesArray = imagesArray.map(image => {
+      return image.replace('./', 'carousel/');
+    });
+    setImages(imagesArray);
+  }, []);
 
   return (
     <>
@@ -147,14 +140,11 @@ function Home() {
         </div>
       </div>
       <div style={{ height: '0.1%', width: '100%' }}></div>
-      <div style={{ backgroundColor: '#1B152D', height: '100%', width: '100%' }}>
-        <div style={{ backgroundColor: 'red', paddingTop: '7%', width: '100%', display: 'flex', flexDirection: 'column' }}>
-          <span >page carousel</span>
-          {/* {images.map((image, index) => (
-            console.log('image == ', image),
-            <img key={index} src={image} alt="carousel" style={{ width: '100%', height: '100%' }} />
-          ))} */}
-          <img src='carousel/gabriel_knies.jpeg' alt="carousel" style={{ width: '10%' }} />
+      <div style={{ backgroundColor: '#1B152D', height: '100%', width: '100%', justifyContent: 'center' }}>
+        <div style={{ paddingTop: '12%', width: '100%', display: 'flex', flexDirection: 'row', justifyContent: 'center' }}>
+          {images.map((image, index) => (
+            <img src={image} alt="carousel" style={{ width: '20%' }} />
+          ))}
         </div>
       </div>
       <div style={{ height: '0.1%', width: '100%' }}></div>
