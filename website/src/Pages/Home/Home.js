@@ -5,6 +5,7 @@ import StepLabel from '@mui/material/StepLabel';
 import { styled } from '@mui/material/styles';
 import StepConnector, { stepConnectorClasses } from '@mui/material/StepConnector';
 import { useState, useEffect } from 'react';
+import Slider from "react-slick";
 
 const steps = [
   'Creation of Robby',
@@ -149,8 +150,40 @@ function Home() {
       </div>
       <div style={{ height: '0.1%', width: '100%' }}></div>
       <div style={{ backgroundColor: '#1B152D', height: '100%', width: '100%' }}>
-        <div style={{ backgroundColor: 'red', paddingTop: '7%', width: '100%', display: 'flex', flexDirection: 'column' }}>
-          <span >page team</span>
+        <div style={{ backgroundColor: '#1B152D', paddingTop: '7%', width: '100%', display: 'flex', flexDirection: 'column', alignItems: "center" }}>
+        <span style={{ color: 'white', fontSize: 72 }} >Our team</span>
+        <div style={{display: 'flex', paddingTop: "15%", justifyContent: "space-around", width: "75%"}}>
+          <div style={{display: 'flex', flexDirection: "column", alignItems: 'center'}}>
+            <img height="110px" width="100px" src="team/gab.jpeg" alt="Gabriel Knies"></img>
+            <span style={{color: 'white', paddingTop: "10%"}}>Gabriel</span>
+            <span style={{color: 'white', paddingTop: "10%"}}>Knies</span>
+          </div>
+          <div style={{display: 'flex', flexDirection: "column", alignItems: 'center'}}>
+            <img height="110px" width="100px" src="team/lolo.jpeg" alt="Lorenzo Manoeuvre"></img>
+            <span style={{color: 'white', paddingTop: "10%"}}>Lorenzo</span>
+            <span style={{color: 'white', paddingTop: "10%"}}>Manoeuvre</span>
+          </div>
+          <div style={{display: 'flex', flexDirection: "column", alignItems: 'center'}}>
+            <img height="110px" width="100px" src="team/lucas.jpeg" alt="Lucas Dudot"></img>
+            <span style={{color: 'white', paddingTop: "10%"}}>Lucas</span>
+            <span style={{color: 'white', paddingTop: "10%"}}>Dudot</span>
+          </div>
+          <div style={{display: 'flex', flexDirection: "column", alignItems: 'center'}}>
+            <img height="110px" width="100px" src="team/rafik.jpeg" alt="Rafik Merzouk"></img>
+            <span style={{color: 'white', paddingTop: "10%"}}>Rafik</span>
+            <span style={{color: 'white', paddingTop: "10%"}}>Merzouk</span>
+          </div>
+          <div style={{display: 'flex', flexDirection: "column", alignItems: 'center'}}>
+            <img height="110px" width="100px" src="team/jor.jpeg" alt="Jori Bashllari"></img>
+            <span style={{color: 'white', paddingTop: "10%"}}>Jori</span>
+            <span style={{color: 'white', paddingTop: "10%"}}>Bashllari</span>
+          </div>
+          <div style={{display: 'flex', flexDirection: "column", alignItems: 'center'}}>
+            <img height="110px" width="100px" src="team/gab.jpeg" alt="Paul Marliere"></img>
+            <span style={{color: 'white', paddingTop: "10%"}}>Paul</span>
+            <span style={{color: 'white', paddingTop: "10%"}}>Marliere</span>
+          </div>
+        </div>
         </div>
       </div>
       <div style={{ height: '0.1%', width: '100%' }}></div>

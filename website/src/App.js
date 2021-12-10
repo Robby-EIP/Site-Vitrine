@@ -5,6 +5,9 @@ import { useState, useEffect } from 'react';
 import { Routes, Route, Link } from "react-router-dom";
 import Navbar from './Components/Navbar/Navbar';
 
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+
 function App() {
   return (
     <div className="App">
