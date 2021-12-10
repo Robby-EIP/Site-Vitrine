@@ -42,7 +42,7 @@ function Home() {
       <div style={{ backgroundColor: '#1B152D', height: '100%', width: '100%', paddingBottom: '7%' }}>
         <div style={{ paddingTop: '15%', width: '100%', display: 'flex', flexDirection: 'row', justifyContent: 'center' }}>
           <div style={{ height: '30%', width: '30%', display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center' }}>
-            <span style={{ color: 'white', fontSize: 32 }}>Exercices Ludiques</span>
+            <span style={{ color: 'white', fontSize: 32 }}>Funny Exercises</span>
             <img src="icons8-google-code.svg" style={{ width: '25%', minWidth: '75px', paddingTop: '7%' }} />
           </div>
           <div style={{ height: '30%', width: '30%', display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center' }}>
@@ -50,19 +50,19 @@ function Home() {
             <img src="If_then_else.svg" style={{ width: '25%', minWidth: '75px', paddingTop: '7%' }} />
           </div>
           <div style={{ height: '30%', width: '30%', display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center' }}>
-            <span style={{ color: 'white', fontSize: 32 }}>Solution clé en main</span>
+            <span style={{ color: 'white', fontSize: 32 }}>Turnkey Solution</span>
             <img src="image 6.svg" style={{ width: '25%', minWidth: '75px', paddingTop: '7%' }} />
           </div>
         </div>
         <div style={{ paddingTop: '7%', width: '100%', display: 'flex', flexDirection: 'row', justifyContent: 'center' }}>
           <div style={{ height: '30%', width: '30%', display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center' }}>
-            <span style={{ color: 'white', fontSize: 32 }}>Gestion Intelligente des robots</span>
+            <span style={{ color: 'white', fontSize: 32 }}>Robots Smart Monitoring</span>
             <img src="image 8.svg" style={{ width: '25%', minWidth: '75px', paddingTop: '7%' }} />
           </div>
           <div style={{ height: '30%', width: '15%', display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center' }}>
           </div>
           <div style={{ height: '30%', width: '30%', display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center' }}>
-            <span style={{ color: 'white', fontSize: 32 }}>Modulable</span>
+            <span style={{ color: 'white', fontSize: 32 }}>Modular</span>
             <img src="image 9.svg" style={{ width: '25%', minWidth: '75px', paddingTop: '7%' }} />
           </div>
         </div>
