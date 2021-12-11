@@ -8,7 +8,7 @@ import { useState, useEffect } from 'react';
 import Slider from "react-slick";
 import { CenterFocusStrong } from '@mui/icons-material';
 import { Form, Button } from 'react-bootstrap';
-
+import emailjs from 'emailjs-com';
 
 const steps = [
   'Creation of Robby',
@@ -52,7 +52,6 @@ const QontoConnector = styled(StepConnector)(({ theme }) => ({
   },
 }));
 
-
 function Home() {
   const [images, setImages] = useState([]);
   const [email, setEmail] = useState('');
@@ -71,7 +70,18 @@ function Home() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(email, object, message);
+    let templateParams = {
+      from_name: email,
+      to_name: 'Robby',
+      message: message,
+      object: object
+    };
+    emailjs.send('service_br3b8y1', 'template_c3kf91m', templateParams, process.env.REACT_APP_EMAIL_JS_KEY)
+      .then((result) => {
+        alert(result.text);
+      }, (error) => {
+        alert(error.text);
+      });
   };
 
   function validateForm() {
@@ -221,7 +231,7 @@ function Home() {
       <div style={{ height: '0.1%', width: '100%' }}></div>
       <div style={{ backgroundColor: '#1B152D', height: '100%', width: '100%', justifyContent: 'center' }}>
         <div style={{ paddingTop: '7%', width: '100%', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
-          <div style={{ marginTop: '5%', backgroundColor: 'orange', paddingTop: '5%', width: '60%', justifyContent: 'center', alignSelf: 'center',  }}>
+          <div style={{ marginTop: '5%', backgroundColor: 'orange', paddingTop: '5%', width: '60%', justifyContent: 'center', alignSelf: 'center', WebkitBorderRadius: "1%" }}>
             <span style={{ color: "black", fontSize: '42px' }}>Contact us</span>
             <div style={{ paddingLeft: '5%', paddingRight: '5%', width: '100%', justifyContent: 'center', display: 'flex' }}>
               <Form style={{ width: '50%', paddingBottom: '5%' }} onSubmit={handleSubmit}>
@@ -231,7 +241,6 @@ function Home() {
                   >Email</Form.Label>
                   <Form.Control
                     placeholder="Enter email"
-                    autoFocus
                     type="email"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
@@ -260,7 +269,7 @@ function Home() {
                   />
                 </Form.Group>
                 <Button
-                  style={{ marginTop: '5%' }}
+                  style={{ marginTop: '5%', color: 'white' }}
                   className="buttonSubmit"
                   block
                   size="lg"
