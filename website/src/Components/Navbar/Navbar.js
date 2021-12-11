@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import $ from "jquery";
+import { Link } from "@mui/material";
 
 export class Navbar extends Component {
   constructor(props) {
@@ -76,10 +77,14 @@ export class Navbar extends Component {
           }}
         >
           <div style={this.pageItem}>
-            <span style={this.pageName}>About</span>
+            <Link className="nav-link" to={"/about"}>
+              <span style={this.pageName}>About</span>
+            </Link>
           </div>
           <div style={this.pageItem}>
-            <span style={this.pageName}>FAQ</span>
+            <Link className="nav-link" to={"/faq"}>
+              <span style={this.pageName}>FAQ</span>
+            </Link>
           </div>
           <div style={this.pageItem}>
             <span style={this.pageName}>Blog</span>

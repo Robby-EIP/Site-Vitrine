@@ -8,6 +8,8 @@ import Navbar from './Components/Navbar/Navbar';
 import "bootstrap/dist/css/bootstrap.min.css";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import About from './Pages/About/About';
+import FAQ from './Pages/FAQ/FAQ';
 
 require('dotenv').config()
 
@@ -24,7 +26,9 @@ function App() {
 
       <div id="main-container">
         <Routes>
-          <Route exact path='/' element={<Home />} />
+          <Route exact path='/' element={<Home />}/>
+          <Route exact path='/about' element={<About/>}/>
+          <Route exact path='/faq' element={<FAQ/>}/>
         </Routes>
       </div>
     </div>
