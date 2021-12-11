@@ -18,6 +18,7 @@ export class Navbar extends Component {
       width: "100%",
       fontSize: "115%",
       cursor: "pointer",
+      color: "white",
     };
   }
 
@@ -57,15 +58,17 @@ export class Navbar extends Component {
             display: "flex",
           }}
         >
-          <span
-            style={{
-              cursor: "pointer",
-              color: "white",
-              fontSize: "150%",
-            }}
-          >
-            Robby
-          </span>
+          <Link className="nav-link" to={"/"}>
+            <span
+              style={{
+                cursor: "pointer",
+                color: "white",
+                fontSize: "150%",
+              }}
+              >
+              Robby
+            </span>
+          </Link>
         </div>
         <div
           className="page-list"
@@ -87,7 +90,9 @@ export class Navbar extends Component {
               </Link>
             </div>
             <div style={this.pageItem}>
-              <span style={this.pageName}>Blog</span>
+              <a href="https://discord.gg/UWUT9yG2Dh" target={"_blank"} style={{ color: 'white', textDecoration: 'none' }}>
+                <span style={this.pageName} >Blog</span>
+              </a>
             </div>
             <div onClick={this.scrollToBot} style={this.pageItem}>
               <span style={this.pageName}>Contact</span>

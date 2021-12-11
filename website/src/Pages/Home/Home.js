@@ -231,7 +231,7 @@ function Home() {
       <div style={{ height: '0.1%', width: '100%' }}></div>
       <div style={{ backgroundColor: '#1B152D', height: '100%', width: '100%', justifyContent: 'center' }}>
         <div style={{ paddingTop: '3%', width: '100%', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
-          <div style={{ marginTop: '5%', backgroundColor: 'orange', paddingBottom: "1%", paddingTop: '2%', width: '50%', justifyContent: 'center', alignSelf: 'center', WebkitBorderRadius: "1%" }}>
+          <div style={{ marginTop: '5%', backgroundColor: 'rgb(121,70,129)', paddingBottom: "1%", paddingTop: '2%', width: '50%', justifyContent: 'center', alignSelf: 'center', WebkitBorderRadius: "1%" }}>
             <span style={{ color: "black", fontSize: '42px' }}>Contact us</span>
             <div style={{ paddingLeft: '5%', paddingRight: '5%', width: '100%', justifyContent: 'center', display: 'flex' }}>
               <Form style={{ width: '50%', paddingBottom: '5%' }} onSubmit={handleSubmit}>
