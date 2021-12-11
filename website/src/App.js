@@ -1,8 +1,6 @@
-import logo from './logo.svg';
 import './App.css';
 import Home from './Pages/Home/Home';
-import { useState, useEffect } from 'react';
-import { Routes, Route, Link } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import Navbar from './Components/Navbar/Navbar';
 
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -26,7 +24,7 @@ function App() {
 
       <div id="main-container">
         <Routes>
-          <Route exact path='/' element={<Home />}/>
+          <Route exact path='/' element={<Home/>}/>
           <Route exact path='/about' element={<About/>}/>
           <Route exact path='/faq' element={<FAQ/>}/>
         </Routes>

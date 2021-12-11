@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import $ from "jquery";
-import { Link } from "@mui/material";
+import { Link } from "react-router-dom";
 
 export class Navbar extends Component {
   constructor(props) {
@@ -76,22 +76,22 @@ export class Navbar extends Component {
             display: "flex",
           }}
         >
-          <div style={this.pageItem}>
-            <Link className="nav-link" to={"/about"}>
-              <span style={this.pageName}>About</span>
-            </Link>
-          </div>
-          <div style={this.pageItem}>
-            <Link className="nav-link" to={"/faq"}>
-              <span style={this.pageName}>FAQ</span>
-            </Link>
-          </div>
-          <div style={this.pageItem}>
-            <span style={this.pageName}>Blog</span>
-          </div>
-          <div onClick={this.scrollToBot} style={this.pageItem}>
-            <span style={this.pageName}>Contact</span>
-          </div>
+            <div style={this.pageItem}>
+              <Link className="nav-link" to={"/about"}>
+                <span style={this.pageName}>About</span>
+              </Link>
+            </div>
+            <div style={this.pageItem}>
+              <Link className="nav-link" to={"/faq"}>
+                <span style={this.pageName}>FAQ</span>
+              </Link>
+            </div>
+            <div style={this.pageItem}>
+              <span style={this.pageName}>Blog</span>
+            </div>
+            <div onClick={this.scrollToBot} style={this.pageItem}>
+              <span style={this.pageName}>Contact</span>
+            </div>
         </div>
       </div>
     );
