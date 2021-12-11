@@ -221,7 +221,7 @@ function Home() {
               <span style={{ color: 'white', paddingTop: "10%" }}>Bashllari</span>
             </div>
             <div style={{ display: 'flex', flexDirection: "column", alignItems: 'center' }}>
-              <img height="110px" width="100px" src="team/gab.jpeg" alt="Paul Marliere"></img>
+              <img height="110px" width="100px" src="team/paul.jpg" alt="Paul Marliere"></img>
               <span style={{ color: 'white', paddingTop: "10%" }}>Paul</span>
               <span style={{ color: 'white', paddingTop: "10%" }}>Marliere</span>
             </div>
@@ -230,8 +230,8 @@ function Home() {
       </div>
       <div style={{ height: '0.1%', width: '100%' }}></div>
       <div style={{ backgroundColor: '#1B152D', height: '100%', width: '100%', justifyContent: 'center' }}>
-        <div style={{ paddingTop: '7%', width: '100%', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
-          <div style={{ marginTop: '5%', backgroundColor: 'orange', paddingTop: '5%', width: '60%', justifyContent: 'center', alignSelf: 'center', WebkitBorderRadius: "1%" }}>
+        <div style={{ paddingTop: '3%', width: '100%', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
+          <div style={{ marginTop: '5%', backgroundColor: 'orange', paddingBottom: "1%", paddingTop: '2%', width: '50%', justifyContent: 'center', alignSelf: 'center', WebkitBorderRadius: "1%" }}>
             <span style={{ color: "black", fontSize: '42px' }}>Contact us</span>
             <div style={{ paddingLeft: '5%', paddingRight: '5%', width: '100%', justifyContent: 'center', display: 'flex' }}>
               <Form style={{ width: '50%', paddingBottom: '5%' }} onSubmit={handleSubmit}>
@@ -269,7 +269,7 @@ function Home() {
                   />
                 </Form.Group>
                 <Button
-                  style={{ marginTop: '5%', color: 'white' }}
+                  style={{ marginTop: '8%', color: 'white' }}
                   className="buttonSubmit"
                   block
                   size="lg"
@@ -280,6 +280,16 @@ function Home() {
                 </Button>
                 {error && <div className="alert alert-danger mt-3 mb-0">{error}</div>}
               </Form>
+            </div>
+          </div>
+          <div style={{ marginTop: '1%', paddingBottom: "3%", paddingTop: '2%', width: '50%', display: 'flex', flexDirection: 'row', justifyContent: 'center', alignSelf: 'center' }}>
+            <div style={{ width: '50%', alignItems: 'center', display: 'flex', justifyContent: "center" }}>
+              <img src="bx_bx-map.svg" alt="map" style={{ width: '8%' }}></img>
+              <span style={{ color: "white", fontSize: '24px', marginLeft: '5%' }}>Montpellier</span>
+            </div>
+            <div style={{ width: '50%', alignItems: 'center', display: 'flex', justifyContent: "center" }}>
+              <img src="ant-design_mail-outlined.svg" alt="mail" style={{ width: '8%' }}></img>
+              <span style={{ color: "white", fontSize: '24px', marginLeft: '5%' }}>robbylerobot@outlook.com</span>
             </div>
           </div>
         </div>
