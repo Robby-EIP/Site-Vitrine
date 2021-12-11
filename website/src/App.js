@@ -6,6 +6,7 @@ import Navbar from './Components/Navbar/Navbar';
 import "bootstrap/dist/css/bootstrap.min.css";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import 'antd/dist/antd.css';
 import About from './Pages/About/About';
 import FAQ from './Pages/FAQ/FAQ';
 

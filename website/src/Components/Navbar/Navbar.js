@@ -95,7 +95,9 @@ export class Navbar extends Component {
               </a>
             </div>
             <div onClick={this.scrollToBot} style={this.pageItem}>
-              <span style={this.pageName}>Contact</span>
+              <Link className="nav-link" to={"/"}>
+                <span style={this.pageName}>Contact</span>
+              </Link>
             </div>
         </div>
       </div>
