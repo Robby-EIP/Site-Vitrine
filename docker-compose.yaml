@@ -1,0 +1,13 @@
+version: "3"
+services:
+  website:
+    build:
+      context: ./website
+      dockerfile: ./Dockerfile
+    ports:
+      - "3000:3000"
+    container_name: "website"
+    volumes:
+      - ./website:/usr/src/app/website
+      - /usr/src/app/website/node_modules
+    restart: always
