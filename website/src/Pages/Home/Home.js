@@ -6,7 +6,6 @@ import { styled } from '@mui/material/styles';
 import StepConnector, { stepConnectorClasses } from '@mui/material/StepConnector';
 import { useState, useEffect } from 'react';
 import Slider from "react-slick";
-import { CenterFocusStrong } from '@mui/icons-material';
 import { Form, Button } from 'react-bootstrap';
 import emailjs from 'emailjs-com';
 
@@ -57,7 +56,7 @@ function Home() {
   const [email, setEmail] = useState('');
   const [object, setObject] = useState('');
   const [message, setMessage] = useState('');
-  const [error, setError] = useState(null);
+  const [error] = useState(null);
 
   useEffect(() => {
     const images = require.context('./carousel', true, /\.(png|jpe?g|svg)$/);

@@ -45,6 +45,7 @@ export class Navbar extends Component {
         <img
           src="logo_white.png"
           style={{ height: "100%", left: "0", paddingTop: "0.2%" }}
+          alt="logo"
         ></img>
         <div
           onClick={this.scrollToTop}
@@ -90,7 +91,7 @@ export class Navbar extends Component {
               </Link>
             </div>
             <div style={this.pageItem}>
-              <a href="https://discord.gg/UWUT9yG2Dh" target={"_blank"} style={{ color: 'white', textDecoration: 'none' }}>
+              <a href="https://discord.gg/UWUT9yG2Dh" target={"_blank"} rel="noreferrer" style={{ color: 'white', textDecoration: 'none' }}>
                 <span style={this.pageName} >Blog</span>
               </a>
             </div>
